@@ -44,12 +44,6 @@ pipeline {
           }
         }
 
-        stage('Execute Java') {
-          steps {
-            bat(script: 'java C:/Users/DBTEKOO/Desktop/Jenkins/MyClass.java', label: 'Run MyClass (Java)')
-          }
-        }
-
       }
     }
 
