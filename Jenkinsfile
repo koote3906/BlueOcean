@@ -7,15 +7,9 @@ pipeline {
       }
     }
 
-    stage('Step 2') {
+    stage('LNRUNC') {
       parallel {
-        stage('LNRUNC') {
-          steps {
-            echo 'Step 2'
-          }
-        }
-
-        stage('parallal') {
+        stage('LN1100') {
           steps {
             echo 'Run LN1100'
           }
@@ -27,12 +21,29 @@ pipeline {
           }
         }
 
+        stage('LN1201') {
+          steps {
+            echo 'Run LN1201'
+          }
+        }
+
       }
     }
 
     stage('DDRUNC') {
-      steps {
-        echo 'Run DD4400'
+      parallel {
+        stage('DD4400') {
+          steps {
+            echo 'Run DD4400'
+          }
+        }
+
+        stage('DD4403') {
+          steps {
+            echo 'Run DD4403'
+          }
+        }
+
       }
     }
 
