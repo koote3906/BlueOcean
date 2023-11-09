@@ -9,7 +9,7 @@ pipeline {
 
     stage('Step 2') {
       parallel {
-        stage('Step 2') {
+        stage('LNRUNC') {
           steps {
             echo 'Step 2'
           }
@@ -17,10 +17,22 @@ pipeline {
 
         stage('parallal') {
           steps {
-            echo 'Step 2.1'
+            echo 'Run LN1100'
           }
         }
 
+        stage('LN1200') {
+          steps {
+            echo 'Run LN1200'
+          }
+        }
+
+      }
+    }
+
+    stage('DDRUNC') {
+      steps {
+        echo 'Run DD4400'
       }
     }
 
