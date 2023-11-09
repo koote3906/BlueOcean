@@ -17,8 +17,7 @@ pipeline {
 
         stage('parallal') {
           steps {
-            sh '''echo \'bye bye\'
-'''
+            echo 'Step 2.1'
           }
         }
 
