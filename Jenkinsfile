@@ -44,6 +44,12 @@ pipeline {
           }
         }
 
+        stage('version') {
+          steps {
+            bat(script: 'java --version', returnStatus: true)
+          }
+        }
+
       }
     }
 
